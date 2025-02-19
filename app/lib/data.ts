@@ -1,9 +1,4 @@
-import {
-  User,
-  LatestInvoice,
-  Invoice,
-  Customer, Revenue,
-} from './definitions';
+import { User, LatestInvoice, Invoice, Customer, Revenue } from './definitions';
 import { formatCurrency } from './utils';
 import { unstable_noStore as noStore } from 'next/cache';
 import { neon } from '@neondatabase/serverless';
@@ -26,7 +21,7 @@ export async function fetchRevenue(): Promise<Revenue[]> {
 
     console.log('Data fetch completed after 3 seconds.');
 
-    return data.map(d=>({
+    return data.map((d) => ({
       month: d.month,
       revenue: d.revenue,
     }));
